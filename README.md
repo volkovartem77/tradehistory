@@ -42,7 +42,6 @@ virtualenv -p /usr/bin/python3.6 ~/tradehistory/venv
 ```
 
 # Before launching
-## Prepare back-end
 **Clone the project and install all dependencies**
 ```
 cd ~/tradehistory; . venv/bin/activate
@@ -68,28 +67,6 @@ influx
 **Make sure that you have `storage` in databases list and then**\
 ```> exit```
 
-
-## Prepare front-end
-**Install Node.js and NPM**
-```
-sudo apt update
-sudo apt install nodejs
-sudo apt install npm
-```
-
-**Install all dependencies in package.json**
-```
-cd ~/tradehistory/front
-sudo pm install
-sudo npm install simple-websocket
-```
-> No worries if you see follow warnings
-```
-npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
-npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.2.9
-
-```
-
 ## Install & config supervisor
 
 ```
@@ -101,7 +78,6 @@ supervisorctl reload
 ```
 
 # Run app
-## Launch Python back-end
 **Using supervisor (if you are in remote server, like VDS)**
 ```
 sudo supervisorctl start wsBinanceDOM
@@ -126,16 +102,3 @@ MATICBTC {'e': 'trade', 'E': 1559283040963, 's': 'MATICBTC' ...
 ```
 2. launch wsServer.py
 It is internal websocket server. There is no output for now.
-3. launch front-end\
-```npm run dev```\
-You'll see a GUI with charts and default data\
-Select pair to start getting data
-
-## Launch front-end
-**Set up external IP to have access remotly**
-Find your computer's address on the network. In terminal, type `ifconfig` and look for the en1 section or the one with something like inet 192.168.1.111\
-Paste this IP in package.json by this command (don't forget to change 192.168.1.111 to yours): `cd ~/tradehistory/front; sed -i "s%"0.0.0.0"%"192.168.1.111"%g" "package.json"`
-```
-sudo supervisorctl start front
-sudo supervisorctl status
-```
