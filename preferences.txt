@@ -1,0 +1,8 @@
+{
+  "pairs": [
+    "MATIC_BTC",
+    "MATIC_USDT",
+    "TNT_BTC",
+    "TNT_USDT"
+  ]
+}
