@@ -28,10 +28,6 @@ sudo ln -s /usr/bin/python3.6 /usr/local/bin/python
 sudo apt-get install git-core
 git clone https://github.com/volkovartem77/tradehistory.git
 ```
-> You may do not need to run decommenter if you deploy it on local machine
-```
-cd ~/tradehistory; . decommenter.sh
-```
 
 
 ## Creating virtualenv using Python 3.6
