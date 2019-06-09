@@ -63,6 +63,11 @@ influx
 **Make sure that you have `storage` in databases list and then**\
 ```> exit```
 
+Go into the code and check websocket address. Line 68 where Socket is initializing\
+```
+sudo nano ~/tradehistory/wsServer.py
+```
+
 ## Install & config supervisor
 
 ```
@@ -86,8 +91,8 @@ sudo supervisorctl status
 If both wsBinanceDOM and wsServer has RUNNING status so everything is right.
 
 
-**Without supervisor (if you are in local machine or IDE)**
-1. launch wsBinanceDOM.py. 
+**Without supervisor (if you are in local machine or IDE)**\
+- Launch wsBinanceDOM.py. \
 The output is going to be like this:
 ```
 start websocket Binance
@@ -96,5 +101,5 @@ maticbtc@trade/maticusdt@trade/tntbtc@trade/tntusdt@trade/
 ### opened ###
 MATICBTC {'e': 'trade', 'E': 1559283040963, 's': 'MATICBTC' ...
 ```
-2. launch wsServer.py
+- Launch wsServer.py\
 It is internal websocket server. There is no output for now.

@@ -15,7 +15,7 @@ def insert_trade(trade):
             "tags": {
                 "symbol": trade['s']
             },
-            "time": datetime.datetime.now().isoformat().split('.')[0] + 'Z',
+            "time": (datetime.datetime.now() + datetime.timedelta(hours=4)).isoformat().split('.')[0] + 'Z',
             "fields": {
                 "event_time": trade['E'],
                 "trade_id": trade['t'],
